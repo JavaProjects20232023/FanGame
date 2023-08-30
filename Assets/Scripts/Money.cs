@@ -6,20 +6,21 @@ using UnityEngine.EventSystems;
 public class Money : MonoBehaviour
 {
     public int coin = 0;
-    public int coinLevel = 0;
-    public int autolevel = 0;
-    public int addcoin = 10;
+    Level level;
+    JsonManager json;
 
     void Start()
     {
        StartCoroutine(Mo());
+       json = GameObject.Find("LevelUpManager").GetComponent<JsonManager>();
+       level = GameObject.Find("GameManager").GetComponent<Level>();
     }
 
     IEnumerator Mo()
     {
         while(true) {
             yield return new WaitForSeconds(1);
-            coin += addcoin * autolevel;
+            coin += json.autos[level.AutoLevel].GetMoney;
         }
     }
     
@@ -27,7 +28,7 @@ public class Money : MonoBehaviour
     {
         if(Input.GetMouseButtonDown (0)) {
             if(!EventSystem.current.IsPointerOverGameObject()) {
-                coin++;
+                coin += json.clicks[level.ClickLevel].GetMoney;
             }
         }
     }
