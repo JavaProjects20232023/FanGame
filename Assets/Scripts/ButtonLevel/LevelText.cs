@@ -5,8 +5,11 @@ using UnityEngine.UI;
 
 public class LevelText : MonoBehaviour
 {
-    public Text text1;
-    public Text text2;
+    [SerializeField]
+    private Text text1;
+
+    [SerializeField]
+    private Text text2;
     Level level;
     JsonManager json;
 

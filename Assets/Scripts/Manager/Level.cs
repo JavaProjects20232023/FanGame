@@ -10,6 +10,7 @@ public class Level : MonoBehaviour
     public int TicketLevel = 0;
     public GameObject Warning;
     private float timer;
+    public float probablity = 0f;
     Money money;
     JsonManager json;
 
@@ -56,6 +57,7 @@ public class Level : MonoBehaviour
         if(money.coin >= 100) {
             TicketLevel++;
             money.coin = money.coin - 100;
+            probablity += 0.1f;
         }
         else {
             Debug.Log("돈이 부족합니다.");
