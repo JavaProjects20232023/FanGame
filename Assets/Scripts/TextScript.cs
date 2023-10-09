@@ -15,6 +15,13 @@ public class TextScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        text.text = money.coin.ToString();
+        if (money.coin<10000)
+        {
+            text.text = money.coin.ToString();
+        }
+        else if (9999<money.coin && money.coin<100000000)
+        {
+            
+        }
     }
 }
