@@ -425,7 +425,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Computer Body
+  m_Text: KeyBoard
 --- !u!222 &76202069
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -703,7 +703,7 @@ GameObject:
   - component: {fileID: 88986611}
   - component: {fileID: 88986610}
   m_Layer: 5
-  m_Name: Body_2
+  m_Name: KeyBoard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -769,11 +769,23 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 88986611}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1384453759}
+        m_TargetAssemblyTypeName: ElectronisController, Assembly-CSharp
+        m_MethodName: ElectronicUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &88986611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1036,7 +1048,7 @@ RectTransform:
   - {fileID: 1328037682}
   - {fileID: 220278292}
   m_Father: {fileID: 1463227780}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1961,7 +1973,6 @@ GameObject:
   m_Component:
   - component: {fileID: 400200876}
   - component: {fileID: 400200875}
-  - component: {fileID: 400200878}
   m_Layer: 0
   m_Name: background
   m_TagString: Untagged
@@ -2034,22 +2045,10 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 49192761}
+  - {fileID: 727055987}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &400200878
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 400200874}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9c3822edb946ff4e957f2a149c23a5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coin: 0
 --- !u!1 &403383929
 GameObject:
   m_ObjectHideFlags: 0
@@ -2128,7 +2127,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1384453758}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &435917470
 SpriteRenderer:
@@ -2338,11 +2337,23 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 506745868}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1384453759}
+        m_TargetAssemblyTypeName: ElectronisController, Assembly-CSharp
+        m_MethodName: ElectronicUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &506745868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2640,7 +2651,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Monitor
+  m_Text: Computer Body
 --- !u!222 &532388680
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3094,7 +3105,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1384453758}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &605490961
 SpriteRenderer:
@@ -3516,7 +3527,7 @@ GameObject:
   - component: {fileID: 725240068}
   - component: {fileID: 725240067}
   m_Layer: 5
-  m_Name: Monitor
+  m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3582,11 +3593,23 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 725240068}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1384453759}
+        m_TargetAssemblyTypeName: ElectronisController, Assembly-CSharp
+        m_MethodName: ElectronicUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &725240068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3650,11 +3673,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 727055986}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.87, y: -0.61, z: -1.039397}
-  m_LocalScale: {x: 1.3296, y: 1.0993, z: 1}
+  m_LocalPosition: {x: 0.42512238, y: 0.61728066, z: -0.31713817}
+  m_LocalScale: {x: 0.4216669, y: 0.34862998, z: 0.31713817}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1384453758}
+  m_Father: {fileID: 400200876}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &727055988
@@ -4433,7 +4456,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1384453758}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &933688162
 SpriteRenderer:
@@ -4634,7 +4657,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Keyboard
+  m_Text: Monitor
 --- !u!222 &969078452
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4714,7 +4737,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: "\uD2F0\uCF13\uD305"
 --- !u!222 &990520249
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4795,13 +4818,13 @@ RectTransform:
   m_Children:
   - {fileID: 364244060}
   - {fileID: 2070452920}
-  m_Father: {fileID: 1463227780}
-  m_RootOrder: 3
+  m_Father: {fileID: 1813688847}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -28}
-  m_SizeDelta: {x: 0, y: -74}
+  m_AnchoredPosition: {x: 0, y: -2.000021}
+  m_SizeDelta: {x: 0, y: 58.400024}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &1037840951
 CanvasRenderer:
@@ -5468,7 +5491,7 @@ GameObject:
   - component: {fileID: 1323951593}
   - component: {fileID: 1323951592}
   m_Layer: 5
-  m_Name: KeyBoard_2
+  m_Name: Monitor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5534,11 +5557,23 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1323951593}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1384453759}
+        m_TargetAssemblyTypeName: ElectronisController, Assembly-CSharp
+        m_MethodName: ElectronicUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1323951593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6094,7 +6129,7 @@ GameObject:
   - component: {fileID: 1384453758}
   - component: {fileID: 1384453759}
   m_Layer: 0
-  m_Name: ' Electronics'
+  m_Name: ElectronicsManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6112,12 +6147,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 933688161}
-  - {fileID: 727055987}
-  - {fileID: 1853881940}
-  - {fileID: 338895959}
-  - {fileID: 605490960}
   - {fileID: 435917469}
+  - {fileID: 605490960}
+  - {fileID: 933688161}
+  - {fileID: 338895959}
+  - {fileID: 1853881940}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6133,12 +6167,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30765ea727696ab41ad06c6c034792db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  electronis:
+  electroncis:
   - {fileID: 435917468}
   - {fileID: 605490959}
-  - {fileID: 1853881939}
   - {fileID: 933688160}
   - {fileID: 338895958}
+  - {fileID: 1853881939}
+  electroncisUpgrade:
+  - {fileID: 1695556596}
+  - {fileID: 506745865}
+  - {fileID: 725240065}
+  - {fileID: 88986608}
+  - {fileID: 1323951590}
 --- !u!1 &1394933000
 GameObject:
   m_ObjectHideFlags: 0
@@ -6173,9 +6213,9 @@ RectTransform:
   m_Father: {fileID: 1508824028}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 34.97, y: 7.59}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -11.48, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1394933002
@@ -6200,18 +6240,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 70
+    m_FontSize: 41
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 80
-    m_Alignment: 2
+    m_Alignment: 5
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 0
+  m_Text: "0\uC6D0"
 --- !u!222 &1394933003
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6643,7 +6683,6 @@ RectTransform:
   - {fileID: 1415720879}
   - {fileID: 840396267}
   - {fileID: 1813688847}
-  - {fileID: 1037840949}
   - {fileID: 149802946}
   m_Father: {fileID: 874979533}
   m_RootOrder: 1
@@ -6799,7 +6838,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b55fbcd6d893ccd40bc214f8702eda95, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c4519687c6ef1214e826bde3828ad925, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6965,7 +7004,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\uB3C8\uC774 \uBD80\uC871\uD569\uB2C8\uB2E4."
+  m_Text: "\uD2F0\uCF13\uD305 \uC131\uACF5"
 --- !u!222 &1520317481
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7010,7 +7049,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -14.5998535, y: 0}
+  m_AnchoredPosition: {x: -14.600098, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1533253734
@@ -7469,7 +7508,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1695556599}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1384453759}
+        m_TargetAssemblyTypeName: ElectronisController, Assembly-CSharp
+        m_MethodName: ElectronicUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1695556599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7543,7 +7594,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.28601074, y: 0}
+  m_AnchoredPosition: {x: 0.2861328, y: 0}
   m_SizeDelta: {x: 10.572, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1786022632
@@ -7692,6 +7743,7 @@ RectTransform:
   m_Children:
   - {fileID: 625469938}
   - {fileID: 1431784225}
+  - {fileID: 1037840949}
   m_Father: {fileID: 1463227780}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7738,7 +7790,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1384453758}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1853881941
 SpriteRenderer:

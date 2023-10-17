@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public class Money : MonoBehaviour
 {
-    public int coin = 0;
+    public long coin = 0;
     Level level;
     JsonManager json;
 
