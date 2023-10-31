@@ -9,28 +9,47 @@ public class Fanmitting : MonoBehaviour
     private int spawn;
     public int count = 0;
     private int setting;
+    int k = 0;
+    bool lockcon = false;
+    bool lockcon2 = false;
 
-    public DayMonth dayMonth;
+    private DayMonth dayMonth;
 
     void Start()
     {
+        dayMonth = GameObject.Find("DayMonth").GetComponent<DayMonth>();
     }
 
     private void Update()
     {
-        int k = 0;
-        if (dayMonth.month == 1)
+        if(dayMonth.month == 1 && !lockcon2)
         {
-            k = Random.Range(0, fanmtting.Length - 1);
-            fanmtting[k].SetActive(true);
+            lockcon = false;
         }
-
-        for (int i = 0; i < fanmtting.Length; i++)
+        if (dayMonth.month == 2)
         {
-            if (i!= k)
+            lockcon2 = false;
+            for (int i = 0; i < fanmtting.Length; i++)
             {
                 fanmtting[i].SetActive(false);
             }
+        }
+
+        if (!lockcon)
+        {
+            k = Random.Range(0, fanmtting.Length);
+            fanmtting[k].SetActive(true);
+            
+            for (int i = 0; i < fanmtting.Length; i++)
+            {
+                if (i != k)
+                {
+                    fanmtting[i].SetActive(false);
+                }
+            }
+
+            lockcon = true;
+            lockcon2 = true;
         }
     }
 }

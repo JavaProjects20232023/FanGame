@@ -9,9 +9,11 @@ public class Probability : MonoBehaviour
     [SerializeField]
     private GameObject faild;
     private Level level;
+    private LikeAblity likeAblity;
     void Start()
     {
         level = GameObject.Find("GameManager").GetComponent<Level>();
+        likeAblity = GameObject.Find("GameManager").GetComponent<LikeAblity>();
     }
 
     public void Fan()
@@ -27,6 +29,7 @@ public class Probability : MonoBehaviour
         {
             success.SetActive(true);
             Invoke("Wait15SecSuccess", 1.5f);
+            likeAblity.LikeUp();
         }
     }
 

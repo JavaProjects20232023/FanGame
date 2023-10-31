@@ -6,23 +6,17 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
     public Slider slider;
-    private float currentTime = 1f;
-    private float maxValue = 61f;
-    private float incrementValue = 1f;
+    private DayMonth dayMonth;
+    private float maxValue = 30f;
 
     void Start()
     {
         slider.maxValue = maxValue;
+        dayMonth = GameObject.Find("DayMonth").GetComponent<DayMonth>();
     }
 
     void Update()
     {
-        currentTime += incrementValue * Time.deltaTime;
-        if (currentTime >= maxValue)
-        {
-            currentTime = 1f;
-        }
-
-        slider.value = currentTime;
+        slider.value = (float)dayMonth.day;
     }
 }
