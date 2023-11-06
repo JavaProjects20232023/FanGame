@@ -26,7 +26,6 @@ public class LikeAblity : MonoBehaviour
             likes++;
             likeAblity.text = likes.ToString() + "%";
             likeSlider.value = likes;
-            Debug.Log("È®·ü¾÷");
         }
     }
 }

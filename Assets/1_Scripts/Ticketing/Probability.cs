@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Probability : MonoBehaviour
 {
@@ -18,7 +19,6 @@ public class Probability : MonoBehaviour
 
     public void Fan()
     {
-        Debug.Log("호출");
         float k = Mathf.Round(Random.Range(0.1f, 100.0f)*10f) / 10f;
         if(k >= level.probablity)
         {

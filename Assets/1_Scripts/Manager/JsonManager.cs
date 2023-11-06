@@ -27,18 +27,21 @@ public class Autos
     }
 }
 
+[System.Serializable]
+public class Wifis
+{
+    public int NeedMoney;
+    public float Probility;
+
+    public static implicit operator int(Wifis y)
+    {
+        throw new NotImplementedException();
+    }
+}
+
 public class JsonManager : MonoBehaviour
 {
     public Clicks[] clicks = new Clicks[10];
     public Autos[] autos = new Autos[10];
-
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
+    public Wifis[] wifis = new Wifis[10];
 }

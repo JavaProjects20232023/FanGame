@@ -10,6 +10,10 @@ public class LevelText : MonoBehaviour
 
     [SerializeField]
     private Text text2;
+
+    [SerializeField]
+    private Text text3;
+
     Level level;
     JsonManager json;
 
@@ -21,7 +25,8 @@ public class LevelText : MonoBehaviour
 
     void Update()
     {
-        text1.text = "Lv. " + level.ClickLevel.ToString();
+        text1.text = "Lv. " + level.ClickLevel;
         text2.text = json.clicks[level.ClickLevel+1].NeedMoney + "원";
+        text3.text = json.clicks[level.ClickLevel].GetMoney + "원";
     }
 }

@@ -9,6 +9,8 @@ public class RollLevelText : MonoBehaviour
     private Text text1;
     [SerializeField]
     private Text text2;
+    [SerializeField]
+    private Text text3;
 
     Level level;
     JsonManager json;
@@ -21,7 +23,8 @@ public class RollLevelText : MonoBehaviour
 
     void Update()
     {
-        text1.text = "Lv. " + level.AutoLevel.ToString();
+        text1.text = "Lv. " + level.AutoLevel;
         text2.text = json.autos[level.AutoLevel+1].NeedMoney + "원";
+        text3.text = json.autos[level.AutoLevel].GetMoney + "원";
     }
 }

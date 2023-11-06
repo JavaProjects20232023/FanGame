@@ -54,10 +54,10 @@ public class Level : MonoBehaviour
 
     public void Ticketing()
     {
-        if(money.coin >= 100) {
+        if(money.coin >= json.wifis[TicketLevel+1].NeedMoney) {
             TicketLevel++;
-            money.coin = money.coin - 100;
-            probablity += 0.1f;
+            money.coin = money.coin - json.wifis[TicketLevel].NeedMoney;
+            probablity += json.wifis[TicketLevel].Probility;
         }
         else {
             Debug.Log("돈이 부족합니다.");

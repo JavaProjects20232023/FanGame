@@ -5,17 +5,26 @@ using UnityEngine.UI;
 
 public class WifiLevelText : MonoBehaviour
 {
-    public Text text;
+    [SerializeField]
+    private Text text1;
+    [SerializeField]
+    private Text text2;
+    [SerializeField]
+    private Text text3;
 
     Level level;
+    JsonManager json;
 
     void Start()
     {
         level = GameObject.Find("GameManager").GetComponent<Level>();
+        json = GameObject.Find("LevelUpManager").GetComponent<JsonManager>();
     }
 
     void Update()
     {
-        text.text = "Lv. " + level.TicketLevel.ToString();
+        text1.text = "Lv. " + level.TicketLevel;
+        text2.text = json.wifis[level.TicketLevel + 1].NeedMoney + "¿ø";
+        text3.text = level.probablity + "%";
     }
 }
