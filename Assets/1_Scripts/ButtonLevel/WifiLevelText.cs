@@ -25,6 +25,6 @@ public class WifiLevelText : MonoBehaviour
     {
         text1.text = "Lv. " + level.TicketLevel;
         text2.text = json.wifis[level.TicketLevel + 1].NeedMoney + "¿ø";
-        text3.text = level.probablity + "%";
+        text3.text = User.probability + "%";
     }
 }

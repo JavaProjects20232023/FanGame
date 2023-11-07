@@ -12,8 +12,6 @@ public class FanMeetingRank : MonoBehaviour
     [SerializeField]
     private Probability probability;
     [SerializeField]
-    private Money money;
-    [SerializeField]
     private FanMeetingLock fanMeetingLock;
     [SerializeField]
     private GameObject warning;
@@ -67,11 +65,12 @@ public class FanMeetingRank : MonoBehaviour
     {
         if (a == 0)
         {
-            if (money.coin > 300000)
+            if (User.coin > 300000)
             {
-                money.coin -= 300000;
+                User.coin -= 300000;
                 fanMeetingLock.OnClick();
                 probability.Fan();
+                User.fanmeetingA++;
             }
             else
             {
@@ -81,11 +80,12 @@ public class FanMeetingRank : MonoBehaviour
         }
         else if (a == 1)
         {
-            if (money.coin > 200000)
+            if (User.coin > 200000)
             {
-                money.coin -= 200000;
+                User.coin -= 200000;
                 fanMeetingLock.OnClick();
                 probability.Fan();
+                User.fanmeetingB++;
 
             }
             else
@@ -96,11 +96,12 @@ public class FanMeetingRank : MonoBehaviour
         }
         else if (a == 2)
         {
-            if (money.coin > 100000)
+            if (User.coin > 100000)
             {
-                money.coin -= 100000;
+                User.coin -= 100000;
                 fanMeetingLock.OnClick();
                 probability.Fan();
+                User.fanmeetingC++;
 
             }
             else

@@ -12,11 +12,9 @@ public class MenuBarController : MonoBehaviour
     public GameObject ItemMenu4;
     public GameObject ItemMenu5;
     private bool menusetting = false;
-    Money money;
 
     void Strat()
     {
-        money = GameObject.Find("Gold").GetComponent<Money>();
         menuBar.SetActive(false);
     }
 

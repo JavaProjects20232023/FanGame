@@ -5,7 +5,6 @@ using UnityEngine.EventSystems;
 
 public class Money : MonoBehaviour
 {
-    public long coin = 0;
     Level level;
     JsonManager json;
 
@@ -20,7 +19,7 @@ public class Money : MonoBehaviour
     {
         while(true) {
             yield return new WaitForSeconds(1);
-            coin += json.autos[level.AutoLevel].GetMoney;
+            User.coin += json.autos[level.AutoLevel].GetMoney;
         }
     }
     
@@ -28,7 +27,7 @@ public class Money : MonoBehaviour
     {
         if(Input.GetMouseButtonDown (0)) {
             if(!EventSystem.current.IsPointerOverGameObject()) {
-                coin += json.clicks[level.ClickLevel].GetMoney;
+                User.coin += json.clicks[level.ClickLevel].GetMoney;
             }
         }
     }

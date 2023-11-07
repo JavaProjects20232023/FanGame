@@ -7,13 +7,11 @@ public class DayMonth : MonoBehaviour
 {
     Timer timer;
     public Text text;
-    public int month = 1;
-    public int day = 1;
     public bool fan = false;
     void Start()
     {
         timer = GameObject.Find("Time").GetComponent<Timer>();
-        text.text = month.ToString() + "월 " + day.ToString() + "일";
+        text.text = User.month.ToString() + "월 " + User.day.ToString() + "일";
         StartCoroutine(Texts());
     }
 
@@ -22,18 +20,18 @@ public class DayMonth : MonoBehaviour
         while(true)
         {
             yield return new WaitForSeconds(2);
-            day++;
-            if (day > 30)
+            User.day++;
+            if (User.day > 30)
             {
-                day = 1;
-                month++;
+                User.day = 1;
+                User.month++;
                 fan = true;
-                if (month > 12)
+                if (User.month > 12)
                 {
-                    month = 1;
+                    User.month = 1;
                 }
             }
-            text.text = month.ToString() + "월 " + day.ToString() + "일";
+            text.text = User.month.ToString() + "월 " + User.day.ToString() + "일";
         }
     }
 }

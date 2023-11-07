@@ -10,13 +10,10 @@ public class Level : MonoBehaviour
     public int TicketLevel = 0;
     public GameObject Warning;
     private float timer;
-    public float probablity = 0f;
-    Money money;
     JsonManager json;
 
     void Start()
     {
-        money = GameObject.Find("Gold").GetComponent<Money>();
         json = GameObject.Find("LevelUpManager").GetComponent<JsonManager>();
         Warning.SetActive(false);
     }
@@ -28,8 +25,8 @@ public class Level : MonoBehaviour
 
     public void Click()
     {
-        if(money.coin >= json.clicks[ClickLevel+1].NeedMoney) {
-            money.coin = money.coin - json.clicks[ClickLevel+1].NeedMoney;
+        if(User.coin >= json.clicks[ClickLevel+1].NeedMoney) {
+            User.coin = User.coin - json.clicks[ClickLevel+1].NeedMoney;
             ClickLevel++;
         }
         else {
@@ -41,8 +38,8 @@ public class Level : MonoBehaviour
 
     public void AutoMoney()
     {
-        if(money.coin >= json.autos[AutoLevel+1].NeedMoney) {
-            money.coin = money.coin - json.autos[AutoLevel+1].NeedMoney;
+        if(User.coin >= json.autos[AutoLevel+1].NeedMoney) {
+            User.coin = User.coin - json.autos[AutoLevel+1].NeedMoney;
             AutoLevel++;
         }
         else {
@@ -54,10 +51,10 @@ public class Level : MonoBehaviour
 
     public void Ticketing()
     {
-        if(money.coin >= json.wifis[TicketLevel+1].NeedMoney) {
+        if(User.coin >= json.wifis[TicketLevel+1].NeedMoney) {
             TicketLevel++;
-            money.coin = money.coin - json.wifis[TicketLevel].NeedMoney;
-            probablity += json.wifis[TicketLevel].Probility;
+            User.coin = User.coin - json.wifis[TicketLevel].NeedMoney;
+            User.probability += json.wifis[TicketLevel].Probility;
         }
         else {
             Debug.Log("돈이 부족합니다.");

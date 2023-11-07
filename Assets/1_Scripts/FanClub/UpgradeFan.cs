@@ -18,22 +18,20 @@ public class UpgradeFan : MonoBehaviour
 
     private JsonManager jsonManager;
     private DayMonth dayMonth;
-    private Money money;
     private int count = 0;
-    private bool minusOn = false;
+
 
     void Start()
     {
         jsonManager = GameObject.Find("LevelUpManager").GetComponent<JsonManager>();
         dayMonth = GameObject.Find("DayMonth").GetComponent<DayMonth>();
-        money = GameObject.Find("Gold").GetComponent<Money>();
     }
 
     void Update()
     {
         if (dayMonth.fan == true)
         {
-            if ( jsonManager.fan[count].MonthMoney > money.coin)
+            if ( jsonManager.fan[count].MonthMoney > User.coin)
             {
                 if (count == 5)
                 {
@@ -58,7 +56,7 @@ public class UpgradeFan : MonoBehaviour
             {
                 if (count != 0)
                 {
-                    money.coin -= jsonManager.fan[count].MonthMoney;
+                    User.coin -= jsonManager.fan[count].MonthMoney;
                 }
             }
             dayMonth.fan = false;
@@ -68,14 +66,14 @@ public class UpgradeFan : MonoBehaviour
     public void Upgrade()
     {
         Debug.Log(count);
-        if (money.coin < jsonManager.fan[count].NeedMoney)
+        if (User.coin < jsonManager.fan[count].NeedMoney)
         {
             warning.SetActive(true);
             Invoke("Wait", 1.5f);
         }
         else
         {
-            money.coin -= jsonManager.fan[count].NeedMoney;
+            User.coin -= jsonManager.fan[count].NeedMoney;
             FanGrade[count].GetComponent<Button>().enabled = false;
             Check[count].SetActive(true);
             NeedMoney[count].SetActive(false);

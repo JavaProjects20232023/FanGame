@@ -6,16 +6,14 @@ using UnityEngine.UI;
 public class TextScript : MonoBehaviour
 {
     public Text text;
-    Money money;
     // Start is called before the first frame update
     void Start()
     {
-        money = GameObject.Find("Gold").GetComponent<Money>();
     }
     // Update is called once per frame
     void Update()
     {
-        text.text = ConvertNumberToText(money.coin) + "¿ø";
+        text.text = ConvertNumberToText(User.coin) + "¿ø";
     }
 
     string ConvertNumberToText(long number)

@@ -9,18 +9,16 @@ public class Probability : MonoBehaviour
     private GameObject success;
     [SerializeField]
     private GameObject faild;
-    private Level level;
     private LikeAblity likeAblity;
     void Start()
     {
-        level = GameObject.Find("GameManager").GetComponent<Level>();
         likeAblity = GameObject.Find("GameManager").GetComponent<LikeAblity>();
     }
 
     public void Fan()
     {
         float k = Mathf.Round(Random.Range(0.1f, 100.0f)*10f) / 10f;
-        if(k >= level.probablity)
+        if(k >= User.probability)
         {
             faild.SetActive(true);
             Invoke("Wait15SecFaild", 1.5f);

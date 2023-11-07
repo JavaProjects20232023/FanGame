@@ -10,7 +10,6 @@ public class LikeAblity : MonoBehaviour
     [SerializeField]
     private Slider likeSlider;
     private float maxValue = 100f;
-    private float likes = 0;
 
     private void Start()
     {
@@ -23,9 +22,9 @@ public class LikeAblity : MonoBehaviour
         float k = Random.Range(0f, 10f);
         if (k < 1)
         {
-            likes++;
-            likeAblity.text = likes.ToString() + "%";
-            likeSlider.value = likes;
+            User.likeAbility++;
+            likeAblity.text = User.likeAbility.ToString() + "%";
+            likeSlider.value = User.likeAbility;
         }
     }
 }

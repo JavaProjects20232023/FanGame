@@ -42,6 +42,6 @@ public class ElectronisController : MonoBehaviour
             electroncis[count].SetActive(true);
         }
         count++;
-        level.probablity += 0.5f;
+        User.probability += 0.5f;
     }
 }
