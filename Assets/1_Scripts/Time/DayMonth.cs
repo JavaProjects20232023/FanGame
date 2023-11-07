@@ -9,6 +9,7 @@ public class DayMonth : MonoBehaviour
     public Text text;
     public int month = 1;
     public int day = 1;
+    public bool fan = false;
     void Start()
     {
         timer = GameObject.Find("Time").GetComponent<Timer>();
@@ -26,6 +27,7 @@ public class DayMonth : MonoBehaviour
             {
                 day = 1;
                 month++;
+                fan = true;
                 if (month > 12)
                 {
                     month = 1;

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class Clicks
@@ -38,10 +39,22 @@ public class Wifis
         throw new NotImplementedException();
     }
 }
+[System.Serializable]
+public class Fan
+{
+    public int NeedMoney;
+    public int MonthMoney;
+
+    public static implicit operator int(Fan z)
+    {
+        throw new NotImplementedException();
+    }
+}
 
 public class JsonManager : MonoBehaviour
 {
     public Clicks[] clicks = new Clicks[10];
     public Autos[] autos = new Autos[10];
     public Wifis[] wifis = new Wifis[10];
+    public Fan[] fan = new Fan[5];
 }
