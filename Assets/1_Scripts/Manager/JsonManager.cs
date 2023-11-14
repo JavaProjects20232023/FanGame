@@ -51,10 +51,23 @@ public class Fan
     }
 }
 
+[System.Serializable]
+public class Electronic
+{
+    public int NeedMoney;
+    public float Plus;
+
+    public static implicit operator int(Electronic a)
+    {
+        throw new NotImplementedException();
+    }
+}
+
 public class JsonManager : MonoBehaviour
 {
     public Clicks[] clicks = new Clicks[10];
     public Autos[] autos = new Autos[10];
     public Wifis[] wifis = new Wifis[10];
     public Fan[] fan = new Fan[5];
+    public Electronic[] electronics = new Electronic[5];
 }

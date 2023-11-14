@@ -70,7 +70,11 @@ public class FanMeetingRank : MonoBehaviour
                 User.coin -= 300000;
                 fanMeetingLock.OnClick();
                 probability.Fan();
-                User.fanmeetingA++;
+                if (probability.succes)
+                {
+                    User.fanmeetingA++;
+                    probability.succes = false;
+                }
             }
             else
             {
@@ -85,7 +89,11 @@ public class FanMeetingRank : MonoBehaviour
                 User.coin -= 200000;
                 fanMeetingLock.OnClick();
                 probability.Fan();
-                User.fanmeetingB++;
+                if (probability.succes)
+                {
+                    User.fanmeetingB++;
+                    probability.succes = false;
+                }
 
             }
             else
@@ -101,7 +109,11 @@ public class FanMeetingRank : MonoBehaviour
                 User.coin -= 100000;
                 fanMeetingLock.OnClick();
                 probability.Fan();
-                User.fanmeetingC++;
+                if (probability.succes)
+                {
+                    User.fanmeetingC++;
+                    probability.succes = false;
+                }
 
             }
             else

@@ -9,9 +9,10 @@ public class ElectronisController : MonoBehaviour
     private GameObject[] electroncis;
     [SerializeField]
     private GameObject[] electroncisUpgrade;
+    [SerializeField]
+    private GameObject warning;
 
-    private Level level;
-
+    private JsonManager jsonManager;
     private int count = 0;
     void Start()
     {
@@ -20,7 +21,7 @@ public class ElectronisController : MonoBehaviour
             electroncisUpgrade[i].GetComponent<ElectronisController>();
             electroncis[i].GetComponent<ElectronisController>();
         }
-        level = GameObject.Find("GameManager").GetComponent<Level>();
+        jsonManager = GameObject.Find("LevelUpManager").GetComponent<JsonManager>();
     }
 
     void Update()
@@ -30,18 +31,32 @@ public class ElectronisController : MonoBehaviour
 
     public void ElectronicUpgrade()
     {
-        electroncisUpgrade[count].GetComponent<Button>().enabled = false;
-        if (count == electroncis.Length - 1)
+        if (User.coin < jsonManager.electronics[count].NeedMoney)
         {
-            electroncis[0].SetActive(false);
-            electroncis[electroncis.Length - 1].SetActive(true);
+            warning.SetActive(true);
+            Invoke("Wait", 1.5f);
         }
         else
         {
-            electroncisUpgrade[count + 1].GetComponent<Button>().interactable = true;
-            electroncis[count].SetActive(true);
+            electroncisUpgrade[count].GetComponent<Button>().enabled = false;
+            if (count == electroncis.Length - 1)
+            {
+                electroncis[0].SetActive(false);
+                electroncis[electroncis.Length - 1].SetActive(true);
+            }
+            else
+            {
+                electroncisUpgrade[count + 1].GetComponent<Button>().interactable = true;
+                electroncis[count].SetActive(true);
+            }
+            User.coin -= jsonManager.electronics[count].NeedMoney;
+            User.probability += jsonManager.electronics[count].Plus;
+            count++;
         }
-        count++;
-        User.probability += 0.5f;
+    }
+
+    public void Wait()
+    {
+        warning.SetActive(false);
     }
 }

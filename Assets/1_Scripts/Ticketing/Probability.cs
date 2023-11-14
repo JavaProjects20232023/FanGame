@@ -9,7 +9,11 @@ public class Probability : MonoBehaviour
     private GameObject success;
     [SerializeField]
     private GameObject faild;
+    [SerializeField]
+    private GameObject scalper;
+
     private LikeAblity likeAblity;
+    public bool succes = false;
     void Start()
     {
         likeAblity = GameObject.Find("GameManager").GetComponent<LikeAblity>();
@@ -28,12 +32,14 @@ public class Probability : MonoBehaviour
             success.SetActive(true);
             Invoke("Wait15SecSuccess", 1.5f);
             likeAblity.LikeUp();
+            succes = true;
         }
     }
 
     void Wait15SecFaild()
     {
         faild.SetActive(false);
+        scalper.SetActive(true);
     }
 
     void Wait15SecSuccess()
