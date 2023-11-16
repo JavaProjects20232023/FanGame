@@ -18,10 +18,18 @@ public class Scalper : MonoBehaviour
         
     }
 
+    IEnumerator Failbuy()
+    {
+        yield return StartCoroutine(Save.instance.DeleteInfo());
+        Application.Quit();
+    }
+
     public void PressYes()
     {
         scalper.SetActive(false);
         Debug.Log("니 데이터는 내가 훔쳐간다.");
+        // delete
+        StartCoroutine(Failbuy());
     }
 
     public void PressNo()
