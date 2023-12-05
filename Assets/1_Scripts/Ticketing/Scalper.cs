@@ -27,14 +27,33 @@ public class Scalper : MonoBehaviour
     public void PressYes()
     {
         scalper.SetActive(false);
-        Debug.Log("니 데이터는 내가 훔쳐간다.");
-        // delete
-        StartCoroutine(Failbuy());
+        int k = Random.Range(0, 101);
+        if (k <= 30)
+        {
+            int l = Random.Range(0, 3);
+            if (l == 0)
+            {
+                User.fanmeetingA++;
+            }
+            else if (l == 1)
+            {
+                User.fanmeetingB++;
+            }
+            else
+            {
+                User.fanmeetingC++;
+            }
+        }
+        else
+        {
+            Debug.Log("니 데이터 내가 가져감");
+            // delete
+            StartCoroutine(Failbuy());
+        }
     }
 
     public void PressNo()
     {
         scalper.SetActive(false);
-        Debug.Log("아 노잼");
     }
 }

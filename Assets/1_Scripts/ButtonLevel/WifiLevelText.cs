@@ -23,8 +23,8 @@ public class WifiLevelText : MonoBehaviour
 
     void Update()
     {
-        text1.text = "Lv. " + level.TicketLevel;
-        text2.text = json.wifis[level.TicketLevel + 1].NeedMoney + "¿ø";
-        text3.text = User.probability + "%";
+        text1.text = "Lv. " + User.count_probability;
+        text2.text = json.wifis[User.count_probability + 1].NeedMoney + "¿ø";
+        text3.text = Mathf.Floor((float)User.probability * 10f) / 10f + "%";
     }
 }

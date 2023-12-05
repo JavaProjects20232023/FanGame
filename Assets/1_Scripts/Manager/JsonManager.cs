@@ -63,6 +63,21 @@ public class Electronic
     }
 }
 
+[System.Serializable]
+public class Stori
+{
+    public int NeedA;
+    public int NeedB;
+    public int NeedC;
+    public float NeedLike;
+    public int GetLikeAbility;
+    public int GetProbability;
+    public static implicit operator int (Stori s)
+    {
+        throw new NotImplementedException(); 
+    }
+}
+
 public class JsonManager : MonoBehaviour
 {
     public Clicks[] clicks = new Clicks[10];
@@ -70,4 +85,5 @@ public class JsonManager : MonoBehaviour
     public Wifis[] wifis = new Wifis[10];
     public Fan[] fan = new Fan[5];
     public Electronic[] electronics = new Electronic[5];
+    public Stori[] storis = new Stori[4];
 }

@@ -18,45 +18,55 @@ public class UpgradeFan : MonoBehaviour
 
     private JsonManager jsonManager;
     private DayMonth dayMonth;
-    private int count = 0;
 
 
     void Start()
     {
         jsonManager = GameObject.Find("LevelUpManager").GetComponent<JsonManager>();
         dayMonth = GameObject.Find("DayMonth").GetComponent<DayMonth>();
+        for (int i = User.FanclubCount + 1; i < FanGrade.Length; i++)
+        {
+            FanGrade[i].GetComponent<Button>().interactable = false;
+        }
+        for (int i = 0; i < User.FanclubCount; i++)
+        {
+            FanGrade[i].GetComponent<Button>().enabled = false;
+            Check[i].SetActive(true);
+            NeedMoney[i].SetActive(false);
+            MonthMoney[i].SetActive(true);
+        }
     }
 
     void Update()
     {
         if (dayMonth.fan == true)
         {
-            if ( jsonManager.fan[count].MonthMoney > User.coin)
+            if ( jsonManager.fan[User.FanclubCount].MonthMoney > User.coin)
             {
-                if (count == 5)
+                if (User.FanclubCount == 5)
                 {
-                    FanGrade[count-1].GetComponent<Button>().enabled = true;
-                    Check[count-1].SetActive(false);
-                    NeedMoney[count-1].SetActive(true);
-                    MonthMoney[count-1].SetActive(false);
-                    count--;
+                    FanGrade[User.FanclubCount - 1].GetComponent<Button>().enabled = true;
+                    Check[User.FanclubCount - 1].SetActive(false);
+                    NeedMoney[User.FanclubCount - 1].SetActive(true);
+                    MonthMoney[User.FanclubCount - 1].SetActive(false);
+                    User.FanclubCount--;
                 }
                 else
                 {
-                    FanGrade[count].GetComponent<Button>().interactable = false;
-                    count--;
-                    FanGrade[count].GetComponent<Button>().enabled = true;
-                    Check[count].SetActive(false);
-                    NeedMoney[count].SetActive(true);
-                    MonthMoney[count].SetActive(false);
+                    FanGrade[User.FanclubCount].GetComponent<Button>().interactable = false;
+                    User.FanclubCount--;
+                    FanGrade[User.FanclubCount].GetComponent<Button>().enabled = true;
+                    Check[User.FanclubCount].SetActive(false);
+                    NeedMoney[User.FanclubCount].SetActive(true);
+                    MonthMoney[User.FanclubCount].SetActive(false);
                 }
                 Debug.Log("°¨¼Ò");
             }
             else
             {
-                if (count != 0)
+                if (User.FanclubCount != 0)
                 {
-                    User.coin -= jsonManager.fan[count].MonthMoney;
+                    User.coin -= jsonManager.fan[User.FanclubCount].MonthMoney;
                 }
             }
             dayMonth.fan = false;
@@ -65,23 +75,23 @@ public class UpgradeFan : MonoBehaviour
 
     public void Upgrade()
     {
-        Debug.Log(count);
-        if (User.coin < jsonManager.fan[count].NeedMoney)
+        Debug.Log(User.FanclubCount);
+        if (User.coin < jsonManager.fan[User.FanclubCount].NeedMoney)
         {
             warning.SetActive(true);
             Invoke("Wait", 1.5f);
         }
         else
         {
-            User.coin -= jsonManager.fan[count].NeedMoney;
-            FanGrade[count].GetComponent<Button>().enabled = false;
-            Check[count].SetActive(true);
-            NeedMoney[count].SetActive(false);
-            MonthMoney[count].SetActive(true);
-            count++;
-            if (FanGrade.Length != count)
+            User.coin -= jsonManager.fan[User.FanclubCount].NeedMoney;
+            FanGrade[User.FanclubCount].GetComponent<Button>().enabled = false;
+            Check[User.FanclubCount].SetActive(true);
+            NeedMoney[User.FanclubCount].SetActive(false);
+            MonthMoney[User.FanclubCount].SetActive(true);
+            User.FanclubCount++;
+            if (FanGrade.Length != User.FanclubCount)
             {
-                FanGrade[count].GetComponent<Button>().interactable = true;
+                FanGrade[User.FanclubCount].GetComponent<Button>().interactable = true;
             }
         }
     }

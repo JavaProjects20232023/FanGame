@@ -13,15 +13,23 @@ public class ElectronisController : MonoBehaviour
     private GameObject warning;
 
     private JsonManager jsonManager;
-    private int count = 0;
     void Start()
     {
-        for (int i = 0; i < electroncisUpgrade.Length; i++)
-        {
-            electroncisUpgrade[i].GetComponent<ElectronisController>();
-            electroncis[i].GetComponent<ElectronisController>();
-        }
         jsonManager = GameObject.Find("LevelUpManager").GetComponent<JsonManager>();
+        for (int i = User.ItemCount + 1; i < electroncis.Length; i++)
+        {
+            electroncisUpgrade[i].GetComponent<Button>().interactable = false;
+        }
+        for (int i = 0; i < User.ItemCount; i++)
+        {
+            electroncisUpgrade[i].GetComponent<Button>().enabled = false;
+            if (i == 4)
+            {
+                electroncis[0].SetActive(false);
+            }
+            electroncis[i].SetActive(true);
+            User.probability += jsonManager.electronics[i].Plus;
+        }
     }
 
     void Update()
@@ -31,27 +39,27 @@ public class ElectronisController : MonoBehaviour
 
     public void ElectronicUpgrade()
     {
-        if (User.coin < jsonManager.electronics[count].NeedMoney)
+        if (User.coin < jsonManager.electronics[User.ItemCount].NeedMoney)
         {
             warning.SetActive(true);
             Invoke("Wait", 1.5f);
         }
         else
         {
-            electroncisUpgrade[count].GetComponent<Button>().enabled = false;
-            if (count == electroncis.Length - 1)
+            electroncisUpgrade[User.ItemCount].GetComponent<Button>().enabled = false;
+            if (User.ItemCount == electroncis.Length - 1)
             {
                 electroncis[0].SetActive(false);
                 electroncis[electroncis.Length - 1].SetActive(true);
             }
             else
             {
-                electroncisUpgrade[count + 1].GetComponent<Button>().interactable = true;
-                electroncis[count].SetActive(true);
+                electroncisUpgrade[User.ItemCount + 1].GetComponent<Button>().interactable = true;
+                electroncis[User.ItemCount].SetActive(true);
             }
-            User.coin -= jsonManager.electronics[count].NeedMoney;
-            User.probability += jsonManager.electronics[count].Plus;
-            count++;
+            User.coin -= jsonManager.electronics[User.ItemCount].NeedMoney;
+            User.probability += jsonManager.electronics[User.ItemCount].Plus;
+            User.ItemCount++;
         }
     }
 

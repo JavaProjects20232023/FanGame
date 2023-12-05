@@ -14,7 +14,14 @@ public class LikeAblity : MonoBehaviour
     private void Start()
     {
         likeSlider.maxValue = maxValue;
-        likeSlider.value = 0;
+        likeSlider.value = User.likeAbility;
+        likeAblity.text = User.likeAbility.ToString();
+    }
+
+    private void Update()
+    {
+        likeSlider.value = User.likeAbility;
+        likeAblity.text = User.likeAbility.ToString();
     }
 
     public void LikeUp()

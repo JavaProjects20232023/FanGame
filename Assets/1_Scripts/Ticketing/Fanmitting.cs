@@ -6,7 +6,6 @@ public class Fanmitting : MonoBehaviour
 {
     public GameObject[] fanmtting;
 
-    public int count = 0;
     int k = 0;
     bool lockcon = false;
     bool lockcon2 = false;

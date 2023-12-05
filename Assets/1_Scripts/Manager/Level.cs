@@ -5,9 +5,6 @@ using UnityEngine;
 
 public class Level : MonoBehaviour
 {
-    public int ClickLevel = 0;
-    public int AutoLevel = 0;
-    public int TicketLevel = 0;
     public GameObject Warning;
     private float timer;
     JsonManager json;
@@ -25,9 +22,9 @@ public class Level : MonoBehaviour
 
     public void Click()
     {
-        if(User.coin >= json.clicks[ClickLevel+1].NeedMoney) {
-            User.coin = User.coin - json.clicks[ClickLevel+1].NeedMoney;
-            ClickLevel++;
+        if(User.coin >= json.clicks[User.ClickLevel+1].NeedMoney) {
+            User.coin = User.coin - json.clicks[User.ClickLevel +1].NeedMoney;
+            User.ClickLevel++;
         }
         else {
             Debug.Log("돈이 부족합니다.");
@@ -38,9 +35,9 @@ public class Level : MonoBehaviour
 
     public void AutoMoney()
     {
-        if(User.coin >= json.autos[AutoLevel+1].NeedMoney) {
-            User.coin = User.coin - json.autos[AutoLevel+1].NeedMoney;
-            AutoLevel++;
+        if(User.coin >= json.autos[User.AutoLevel +1].NeedMoney) {
+            User.coin = User.coin - json.autos[User.AutoLevel +1].NeedMoney;
+            User.AutoLevel++;
         }
         else {
             Debug.Log("돈이 부족합니다.");
@@ -51,10 +48,10 @@ public class Level : MonoBehaviour
 
     public void Ticketing()
     {
-        if(User.coin >= json.wifis[TicketLevel+1].NeedMoney) {
-            TicketLevel++;
-            User.coin = User.coin - json.wifis[TicketLevel].NeedMoney;
-            User.probability += json.wifis[TicketLevel].Probility;
+        if(User.coin >= json.wifis[User.count_probability +1].NeedMoney) {
+            User.count_probability++;
+            User.coin = User.coin - json.wifis[User.count_probability].NeedMoney;
+            User.probability += json.wifis[User.count_probability].Probility;
         }
         else {
             Debug.Log("돈이 부족합니다.");

@@ -26,7 +26,8 @@ public class FanMeetingRank : MonoBehaviour
 
     private void Update()
     {
-        
+        Rank.text = rank[a].ToString();
+        Price(rank[a]);
     }
 
     public void Open()
@@ -35,20 +36,14 @@ public class FanMeetingRank : MonoBehaviour
         Debug.Log(k);
         if ( k <= 10)
         {
-            Rank.text = rank[0].ToString();
-            Price(rank[0]);
             a = 0;
         }
         else if (k <= 40)
         {
-            Rank.text = rank[1].ToString();
-            Price(rank[1]);
             a = 1;
         }
         else
         {
-            Rank.text = rank[2].ToString();
-            Price(rank[2]);
             a = 2;
         }
 

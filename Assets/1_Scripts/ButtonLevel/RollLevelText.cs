@@ -23,8 +23,8 @@ public class RollLevelText : MonoBehaviour
 
     void Update()
     {
-        text1.text = "Lv. " + level.AutoLevel;
-        text2.text = json.autos[level.AutoLevel+1].NeedMoney + "원";
-        text3.text = json.autos[level.AutoLevel].GetMoney + "원";
+        text1.text = "Lv. " + User.AutoLevel;
+        text2.text = json.autos[User.AutoLevel+1].NeedMoney + "원";
+        text3.text = json.autos[User.AutoLevel].GetMoney + "원";
     }
 }

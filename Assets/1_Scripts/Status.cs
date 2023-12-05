@@ -41,7 +41,7 @@ public class Status : MonoBehaviour
         fanmeetingB.text = "Bµî±Þ ÆÒ¹ÌÆÃ È½¼ö: " + User.fanmeetingB.ToString() + "È¸";
         fanmeetingC.text = "Cµî±Þ ÆÒ¹ÌÆÃ È½¼ö: " + User.fanmeetingC.ToString() + "È¸";
         likeability.text = "È£°¨µµ: " + User.likeAbility.ToString() + "%";
-        probability.text = "È®·ü: " + User.probability.ToString() + "%";
+        probability.text = "È®·ü: " + Mathf.Floor((float)User.probability * 10f) / 10f + "%";
     }
 
     string ConvertNumberToText(long number)

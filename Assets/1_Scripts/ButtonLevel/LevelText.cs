@@ -25,8 +25,8 @@ public class LevelText : MonoBehaviour
 
     void Update()
     {
-        text1.text = "Lv. " + level.ClickLevel;
-        text2.text = json.clicks[level.ClickLevel+1].NeedMoney + "원";
-        text3.text = json.clicks[level.ClickLevel].GetMoney + "원";
+        text1.text = "Lv. " + User.ClickLevel;
+        text2.text = json.clicks[User.ClickLevel+1].NeedMoney + "원";
+        text3.text = json.clicks[User.ClickLevel].GetMoney + "원";
     }
 }
