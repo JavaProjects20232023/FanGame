@@ -13,6 +13,10 @@ public class Ending : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+    }
+
+    public void ButtonPress()
+    {
+        Application.Quit();
     }
 }
