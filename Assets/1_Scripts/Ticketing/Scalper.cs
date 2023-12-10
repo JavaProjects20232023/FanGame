@@ -18,9 +18,10 @@ public class Scalper : MonoBehaviour
         
     }
 
-    IEnumerator Failbuy()
+    public void Failbuy()
     {
-        yield return StartCoroutine(Save.instance.DeleteInfo());
+        User.name = ""; //StartCoroutine(Save.instance.DeleteInfo());
+        SaveLoad.instance.Save();
         Application.Quit();
     }
 
@@ -48,7 +49,7 @@ public class Scalper : MonoBehaviour
         {
             Debug.Log("니 데이터 내가 가져감");
             // delete
-            StartCoroutine(Failbuy());
+            Failbuy();
         }
     }
 

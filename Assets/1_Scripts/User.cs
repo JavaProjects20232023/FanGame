@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class User
 {
-    public static string uuid = "";
+    public static string id = "";
     public static string name = "";
     public static int coin = 10000000;
     public static int fanmeetingA=100;

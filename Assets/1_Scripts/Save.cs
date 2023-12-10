@@ -8,7 +8,8 @@ using System.Text;
 
 public class Save : MonoBehaviour
 {
-
+    /*
+    
     public static Save instance = null;
     private void Awake()
     {
@@ -137,4 +138,6 @@ public class Save : MonoBehaviour
             Debug.Log("네트워크 환경이 안좋아서 통신을 할수 없습니다.");
         }
     }
+
+    */
 }

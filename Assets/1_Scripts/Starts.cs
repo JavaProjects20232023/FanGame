@@ -15,30 +15,27 @@ public class Starts : MonoBehaviour
     }
 
 
-    private IEnumerator Startgame()
+    private void Startgame()
     {
-        yield return StartCoroutine(Save.instance.LoadInfo());
-
-        // 페이드아웃 해서 넘어가게 해 줘
         SceneManager.LoadScene("Game");
     }
 
-    public IEnumerator Do()
+    public void Do()
     {
-        yield return StartCoroutine(Save.instance.LoadInfo());
         if (User.name == "")
         {
             newmodal.SetActive(true);
         }
         else
         {
-            StartCoroutine(Startgame());
+            SaveLoad.instance.Load();
+            Startgame();
         }
     }
 
     public void PressYes()
     {
-        StartCoroutine(Do());
+        Do();
     }
 
     public void RegistYes()
@@ -46,9 +43,9 @@ public class Starts : MonoBehaviour
         if (nametext.text != "")
         {
             User.name = nametext.text;
+            SaveLoad.instance.Save();
+            Startgame();
         }
-        StartCoroutine(Save.instance.SaveInfo());
-        StartCoroutine(Startgame());
     }
 
     public void PressNo()
