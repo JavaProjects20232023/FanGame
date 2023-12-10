@@ -23,10 +23,6 @@ public class ElectronisController : MonoBehaviour
         for (int i = 0; i < User.ItemCount; i++)
         {
             electroncisUpgrade[i].GetComponent<Button>().enabled = false;
-            if (i == 4)
-            {
-                electroncis[0].SetActive(false);
-            }
             electroncis[i].SetActive(true);
             User.probability += jsonManager.electronics[i].Plus;
         }
@@ -49,7 +45,6 @@ public class ElectronisController : MonoBehaviour
             electroncisUpgrade[User.ItemCount].GetComponent<Button>().enabled = false;
             if (User.ItemCount == electroncis.Length - 1)
             {
-                electroncis[0].SetActive(false);
                 electroncis[electroncis.Length - 1].SetActive(true);
             }
             else

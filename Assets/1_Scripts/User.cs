@@ -10,7 +10,7 @@ public static class User
     public static int fanmeetingA=100;
     public static int fanmeetingB=300;
     public static int fanmeetingC=500;
-    public static int likeAbility=50;
+    public static int likeAbility=100;
     public static int day = 1;
     public static int month = 1;
     public static double probability=0;
