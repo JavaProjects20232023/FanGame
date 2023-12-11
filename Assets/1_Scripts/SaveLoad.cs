@@ -184,6 +184,11 @@ public static class SaveSystem // save location -> C:\Users\{username}\AppData\L
         return saveData;
     }
 
+    public static void Delete(string saveFileName)
+    {
+        File.Delete(saveFileName+"userinfo.json");
+    }
+
     public static string EncryptDecrypt(string saveJson)
     {
         string modified = "";
@@ -235,6 +240,11 @@ public class SaveLoad : MonoBehaviour
         {
             Load();
         }*/
+    }
+
+    public void Delete()
+    {
+        SaveSystem.Delete(SaveSystem.SavePath);
     }
 
     public void Save()

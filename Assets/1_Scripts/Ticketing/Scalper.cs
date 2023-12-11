@@ -21,7 +21,7 @@ public class Scalper : MonoBehaviour
     public void Failbuy()
     {
         User.name = ""; //StartCoroutine(Save.instance.DeleteInfo());
-        SaveLoad.instance.Save();
+        SaveLoad.instance.Delete();
         Application.Quit();
     }
 

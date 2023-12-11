@@ -26,6 +26,7 @@ public class MenuBarController : MonoBehaviour
     public void DownButton()
     {
         menuBar.SetActive(false);
+        GL.Clear(true, true, Color.black);
     }
 
     public void ItemMenu_1()
