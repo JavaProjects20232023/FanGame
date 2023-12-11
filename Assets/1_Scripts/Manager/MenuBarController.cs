@@ -11,18 +11,21 @@ public class MenuBarController : MonoBehaviour
     public GameObject ItemMenu3;
     public GameObject ItemMenu4;
     public GameObject ItemMenu5;
-    private bool menusetting = false;
 
     void Strat()
     {
         menuBar.SetActive(false);
     }
 
-    public void ToggleMenuBar()
+    public void UpButton()
     {
-        menusetting = !menusetting;
-        menuBar.SetActive(menusetting);
+        menuBar.SetActive(true);
         ItemMenu_1();
+    }
+
+    public void DownButton()
+    {
+        menuBar.SetActive(false);
     }
 
     public void ItemMenu_1()
