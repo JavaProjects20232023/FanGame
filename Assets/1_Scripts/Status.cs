@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -33,15 +33,15 @@ public class Status : MonoBehaviour
 
     private void Update()
     {
-        month.text = User.month.ToString() + "¿ù";
-        day.text = User.day.ToString() + "ÀÏ";
-        username.text = "ÀÌ¸§: " + User.name;
-        money.text = "µ·: " + ConvertNumberToText(User.coin) + "¿ø";
-        fanmeetingA.text = "Aµî±Ş ÆÒ¹ÌÆÃ È½¼ö: " + User.fanmeetingA.ToString() + "È¸";
-        fanmeetingB.text = "Bµî±Ş ÆÒ¹ÌÆÃ È½¼ö: " + User.fanmeetingB.ToString() + "È¸";
-        fanmeetingC.text = "Cµî±Ş ÆÒ¹ÌÆÃ È½¼ö: " + User.fanmeetingC.ToString() + "È¸";
-        likeability.text = "È£°¨µµ: " + User.likeAbility.ToString() + "%";
-        probability.text = "È®·ü: " + Mathf.Floor((float)User.probability * 10f) / 10f + "%";
+        month.text = User.month.ToString() + "ì›”";
+        day.text = User.day.ToString() + "ì¼";
+        username.text = "ì´ë¦„: " + User.name;
+        money.text = "ëˆ: " + ConvertNumberToText(User.coin) + "ì›";
+        fanmeetingA.text = "Aë“±ê¸‰ íŒ¬ë¯¸íŒ… íšŸìˆ˜: " + User.fanmeetingA.ToString() + "íšŒ";
+        fanmeetingB.text = "Bë“±ê¸‰ íŒ¬ë¯¸íŒ… íšŸìˆ˜: " + User.fanmeetingB.ToString() + "íšŒ";
+        fanmeetingC.text = "Cë“±ê¸‰ íŒ¬ë¯¸íŒ… íšŸìˆ˜: " + User.fanmeetingC.ToString() + "íšŒ";
+        likeability.text = "í˜¸ê°ë„: " + User.likeAbility.ToString() + "%";
+        probability.text = "í™•ë¥ : " + Mathf.Floor((float)User.probability * 10f) / 10f + "%";
     }
 
     string ConvertNumberToText(long number)
@@ -51,7 +51,7 @@ public class Status : MonoBehaviour
             return "0";
         }
 
-        string[] unitNames = { "", "¸¸", "¾ï", "Á¶" };
+        string[] unitNames = { "", "ë§Œ", "ì–µ", "ì¡°" };
         string result = "";
         int unitIndex = 0;
 

@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -131,7 +131,7 @@ public class SaveData
             return this;
         }
 
-        // ÃÖÁ¾ÀûÀ¸·Î SaveData ÀÎ½ºÅÏ½º¸¦ ¹ÝÈ¯
+        // ìµœì¢…ì ìœ¼ë¡œ SaveData ì¸ìŠ¤í„´ìŠ¤ë¥¼ ë°˜í™˜
         public SaveData Build()
         {
             return saveData;
@@ -148,7 +148,7 @@ public static class SaveSystem // save location -> C:\Users\{username}\AppData\L
 
     public static void Save(SaveData saveData, string saveFileName, bool useEncryption)
     {
-        if (!Directory.Exists(SavePath)) // Á¸ÀçÇÏÁö ¾ÊÀ¸¸é »õ·Î ¸¸µé¾îÁØ´Ù.
+        if (!Directory.Exists(SavePath)) // ì¡´ìž¬í•˜ì§€ ì•Šìœ¼ë©´ ìƒˆë¡œ ë§Œë“¤ì–´ì¤€ë‹¤.
         {
             Directory.CreateDirectory(SavePath);
         }

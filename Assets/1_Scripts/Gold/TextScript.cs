@@ -1,4 +1,4 @@
-using System.Collections;
+Ôªøusing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,7 +13,7 @@ public class TextScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        text.text = ConvertNumberToText(User.coin) + "ø¯";
+        text.text = ConvertNumberToText(User.coin) + "Ïõê";
     }
 
     string ConvertNumberToText(long number)
@@ -23,7 +23,7 @@ public class TextScript : MonoBehaviour
             return "0";
         }
 
-        string[] unitNames = { "", "∏∏", "æÔ", "¡∂" };
+        string[] unitNames = { "", "Îßå", "Ïñµ", "Ï°∞" };
         string result = "";
         int unitIndex = 0;
 

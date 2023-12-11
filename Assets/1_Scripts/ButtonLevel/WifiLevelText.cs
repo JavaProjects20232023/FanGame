@@ -1,4 +1,4 @@
-using System.Collections;
+Ôªøusing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -24,7 +24,7 @@ public class WifiLevelText : MonoBehaviour
     void Update()
     {
         text1.text = "Lv. " + User.count_probability;
-        text2.text = json.wifis[User.count_probability + 1].NeedMoney + "ø¯";
+        text2.text = json.wifis[User.count_probability + 1].NeedMoney + "Ïõê";
         text3.text = Mathf.Floor((float)User.probability * 10f) / 10f + "%";
     }
 }

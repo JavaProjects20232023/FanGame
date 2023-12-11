@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -50,7 +50,7 @@ public class Starts : MonoBehaviour
 
     public void PressNo()
     {
-        Debug.Log("°ÔÀÓ ²¨Áö°Ô ¸¸µé¾îÁà ÀÀ¾Ö");
+        Debug.Log("ê²Œì„ êº¼ì§€ê²Œ ë§Œë“¤ì–´ì¤˜ ì‘ì• ");
         Application.Quit();
     }
 }

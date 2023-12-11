@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -51,9 +51,9 @@ public class FanMeetingRank : MonoBehaviour
 
     private void Price(char k)
     {
-        if (k == rank[0]) TicketPrice.text = "30¸¸¿ø";
-        else if (k == rank[1]) TicketPrice.text = "20¸¸¿ø";
-        else TicketPrice.text = "10¸¸¿ø";
+        if (k == rank[0]) TicketPrice.text = "30ë§Œì›";
+        else if (k == rank[1]) TicketPrice.text = "20ë§Œì›";
+        else TicketPrice.text = "10ë§Œì›";
     }
 
     public void BuyTicket()

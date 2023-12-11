@@ -1,4 +1,4 @@
-using System.Collections;
+Ôªøusing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -47,7 +47,7 @@ public class Scalper : MonoBehaviour
         }
         else
         {
-            Debug.Log("¥œ µ•¿Ã≈Õ ≥ª∞° ∞°¡Æ∞®");
+            Debug.Log("Îãà Îç∞Ïù¥ÌÑ∞ ÎÇ¥Í∞Ä Í∞ÄÏ†∏Í∞ê");
             // delete
             Failbuy();
         }

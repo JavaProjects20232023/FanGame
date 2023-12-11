@@ -1,4 +1,4 @@
-using System.Collections;
+Ôªøusing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -60,7 +60,7 @@ public class UpgradeFan : MonoBehaviour
                     NeedMoney[User.FanclubCount].SetActive(true);
                     MonthMoney[User.FanclubCount].SetActive(false);
                 }
-                Debug.Log("∞®º“");
+                Debug.Log("Í∞êÏÜå");
             }
             else
             {

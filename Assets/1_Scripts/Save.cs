@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,15 +13,15 @@ public class Save : MonoBehaviour
     public static Save instance = null;
     private void Awake()
     {
-        if (instance == null) //instance°¡ null. Áï, ½Ã½ºÅÛ»ó¿¡ Á¸ÀçÇÏ°í ÀÖÁö ¾ÊÀ»¶§
+        if (instance == null) //instanceê°€ null. ì¦‰, ì‹œìŠ¤í…œìƒì— ì¡´ì¬í•˜ê³  ìˆì§€ ì•Šì„ë•Œ
         {
-            instance = this; //³»ÀÚ½ÅÀ» instance·Î ³Ö¾îÁİ´Ï´Ù.
-            DontDestroyOnLoad(gameObject); //OnLoad(¾ÀÀÌ ·Îµå µÇ¾úÀ»¶§) ÀÚ½ÅÀ» ÆÄ±«ÇÏÁö ¾Ê°í À¯Áö
+            instance = this; //ë‚´ìì‹ ì„ instanceë¡œ ë„£ì–´ì¤ë‹ˆë‹¤.
+            DontDestroyOnLoad(gameObject); //OnLoad(ì”¬ì´ ë¡œë“œ ë˜ì—ˆì„ë•Œ) ìì‹ ì„ íŒŒê´´í•˜ì§€ ì•Šê³  ìœ ì§€
         }
         else
         {
-            if (instance != this) //instance°¡ ³»°¡ ¾Æ´Ï¶ó¸é ÀÌ¹Ì instance°¡ ÇÏ³ª Á¸ÀçÇÏ°í ÀÖ´Ù´Â ÀÇ¹Ì
-                Destroy(this.gameObject); //µÑ ÀÌ»ó Á¸ÀçÇÏ¸é ¾ÈµÇ´Â °´Ã¼ÀÌ´Ï ¹æ±İ AWakeµÈ ÀÚ½ÅÀ» »èÁ¦
+            if (instance != this) //instanceê°€ ë‚´ê°€ ì•„ë‹ˆë¼ë©´ ì´ë¯¸ instanceê°€ í•˜ë‚˜ ì¡´ì¬í•˜ê³  ìˆë‹¤ëŠ” ì˜ë¯¸
+                Destroy(this.gameObject); //ë‘˜ ì´ìƒ ì¡´ì¬í•˜ë©´ ì•ˆë˜ëŠ” ê°ì²´ì´ë‹ˆ ë°©ê¸ˆ AWakeëœ ìì‹ ì„ ì‚­ì œ
         }
     }
 
@@ -96,7 +96,7 @@ public class Save : MonoBehaviour
 
         if (webRequest.result == UnityWebRequest.Result.ConnectionError || webRequest.result == UnityWebRequest.Result.ProtocolError)
         {
-            Debug.Log("³×Æ®¿öÅ© È¯°æÀÌ ¾ÈÁÁ¾Æ¼­ Åë½ÅÀ» ÇÒ¼ö ¾ø½À´Ï´Ù.");
+            Debug.Log("ë„¤íŠ¸ì›Œí¬ í™˜ê²½ì´ ì•ˆì¢‹ì•„ì„œ í†µì‹ ì„ í• ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
         }
         else
         {
@@ -117,7 +117,7 @@ public class Save : MonoBehaviour
 
         if (webRequest.result == UnityWebRequest.Result.ConnectionError || webRequest.result == UnityWebRequest.Result.ProtocolError)
         {
-            Debug.Log("³×Æ®¿öÅ© È¯°æÀÌ ¾ÈÁÁ¾Æ¼­ Åë½ÅÀ» ÇÒ¼ö ¾ø½À´Ï´Ù.");
+            Debug.Log("ë„¤íŠ¸ì›Œí¬ í™˜ê²½ì´ ì•ˆì¢‹ì•„ì„œ í†µì‹ ì„ í• ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
         }
         else
         {
@@ -135,7 +135,7 @@ public class Save : MonoBehaviour
 
         if (webRequest.result == UnityWebRequest.Result.ConnectionError || webRequest.result == UnityWebRequest.Result.ProtocolError)
         {
-            Debug.Log("³×Æ®¿öÅ© È¯°æÀÌ ¾ÈÁÁ¾Æ¼­ Åë½ÅÀ» ÇÒ¼ö ¾ø½À´Ï´Ù.");
+            Debug.Log("ë„¤íŠ¸ì›Œí¬ í™˜ê²½ì´ ì•ˆì¢‹ì•„ì„œ í†µì‹ ì„ í• ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
         }
     }
 

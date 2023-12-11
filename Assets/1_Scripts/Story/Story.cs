@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -57,7 +57,7 @@ public class Story : MonoBehaviour
         else
         {
             storyObjects[User.StoryCount].GetComponent<Button>().interactable = false;
-            Debug.Log("¿£µùÀÓ ¿ì¿Í¾Æ¾Æ¾Æ¾Ó");
+            Debug.Log("ì—”ë”©ìž„ ìš°ì™€ì•„ì•„ì•„ì•™");
             SceneManager.LoadScene("Ending");
         }
         
